@@ -304,7 +304,7 @@ Please remember, your suggestions and questions should consistently aim to impro
 
 Here are some techniques you can use while refining your prompt.
 
-- Use delimiters to clearly indicate distinct parts.
+#### Use delimiters to clearly indicate distinct parts.
 
 Delimiters can be triple backticks, triple quotes """, triple dashes, angled
 brackets, xml tags, etc.
@@ -319,7 +319,7 @@ Delimiters are also helpful in avoiding prompt injection. Prompt injection is wh
 user is allowed to add some input to your prompt and could potentially give
 conflicting instructions to the model.
 
-- Structured output
+#### Structured output
 
 Ask for a response in a specific format which can make the model response easier
 to response.
@@ -357,7 +357,7 @@ Response:
 ```
 
 
-- Give the model an out
+#### Give the model an out
 
 Specify what the model should do in case that any preconditions are not met.
 

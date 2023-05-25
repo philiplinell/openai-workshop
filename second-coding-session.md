@@ -7,7 +7,7 @@ Goals to achieve:
 1. Create a prompt.
 
 I recommend using [ChatGPT](https://chat.openai.com/) with the prompt described
-[here](https://github.com/philiplinell/openai-workshop/blob/main/README.md#prompt-engineering)
+[here](https://github.com/philiplinell/openai-workshop/blob/main/openai-overview.md#prompt-engineering)
 to generate the prompt.
 
 For testing I recommend you to use the
