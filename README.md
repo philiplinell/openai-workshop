@@ -37,25 +37,25 @@ The mission is to ensure that artificial general intelligence (AGI) benefits
 all of humanity.
 
 The organization started and continues to be a non-profit, but has a subsidiary
-that is a capped for-profit company [^1]. The goal with this structure is to try
+that is a capped for-profit company [^1] [^2]. The goal with this structure is to try
 to strike a balance between the slow pace of non-profit and the speed of a
 for-profit.
 
 ## Models
 
 The different models has different purposes, such as generating code, images,
-natural language, etc. [^2].
+natural language, etc. [^3].
 
 | Model | Purpose |
 | -- | -- |
 | DALL E | Image generation from natural language |
 | Whisper | Speech recognition model |
-| Embeddings |  Measures relatedness of text strings. Use cases are search, recommendations, anomaly detection [^3] etc. |
+| Embeddings |  Measures relatedness of text strings. Use cases are search, recommendations, anomaly detection [^4] etc. |
 
 ## Note on Proprietary Data
 
 Be mindful of the data you send into the API. Even though the data sent via the
-API is not used to improve the models [^4], you should have permission from your
+API is not used to improve the models [^5], you should have permission from your
 client if you use any tools (such as the one we are building) professionally.
 
 For example, in the past, companies like Amazon and Samsung faced issues related
