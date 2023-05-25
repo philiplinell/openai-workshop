@@ -46,12 +46,11 @@ for-profit.
 The different models has different purposes, such as generating code, images,
 natural language, etc. [^2].
 
-Example:
-
-* DALL E: Image generation from natural language
-* Whisper: Speech recognition model
-* Embeddings: Measures relatedness of text strings. Use cases are search,
-    recommendations, anomaly detection [^3] etc.
+| Model | Purpose |
+| -- | -- |
+| DALL E | Image generation from natural language |
+| Whisper | Speech recognition model |
+| Embeddings |  Measures relatedness of text strings. Use cases are search, recommendations, anomaly detection [^3] etc. |
 
 ## Note on Proprietary Data
 
@@ -483,7 +482,8 @@ Specify what the model should do in case that any preconditions are not met.
 Goals to achieve:
 
 1. Create a prompt.
-    I recommend using [ChatGPT](https://chat.openai.com/) with the prompt above
+    I recommend using [ChatGPT](https://chat.openai.com/) with the prompt
+    [above](https://github.com/philiplinell/openai-workshop/blob/main/README.md#prompt-engineering)
     to generate the prompt.
     For testing I recommend you to use the
     [playground](https://platform.openai.com/playground/p/?mode=chat).
