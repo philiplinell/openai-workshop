@@ -17,8 +17,6 @@ $ git checkout f8de255e94540f9018d8196b3a34da500707c39b
 # store files changed in file
 $ git diff HEAD~ > diff.txt
 
-
-# alternatively you can copy them to clipboard directly (use 'xclip -selection clipboard'
-# on linux)
+# alternatively you can copy them to clipboard directly (use 'xclip -selection clipboard' on linux)
 $ git diff HEAD~ | pbcopy
 ```
