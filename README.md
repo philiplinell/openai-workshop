@@ -16,10 +16,8 @@ The driver for the learning will be to create a git commit suggestion tool.
 
 - Introduction 5 minutes
 - Coding session 15 minutes
-- OpenAI Talk 10 minutes
-- Coding session 10 minutes
-- Suggested improvements 5 minutes
-- Coding session 10 minutes
+- OpenAI Details 10 minutes
+- Coding session 20 minutes
 - Wrap up & thoughts, 5 minutes
 
 ## What Will We Build?
@@ -46,19 +44,19 @@ for-profit.
 ## Models
 
 The different models has different purposes, such as generating code, images,
-natural language, etc. [^3].
+natural language, etc. [^2].
 
 Example:
 
 * DALL E: Image generation from natural language
 * Whisper: Speech recognition model
 * Embeddings: Measures relatedness of text strings. Use cases are search,
-    recommendations, anomaly detection [^4] etc.
+    recommendations, anomaly detection [^3] etc.
 
 ## Note on Proprietary Data
 
 Be mindful of the data you send into the API. Even though the data sent via the
-API is not used to improve the models [^5], you should have permission from your
+API is not used to improve the models [^4], you should have permission from your
 client if you use any tools (such as the one we are building) professionally.
 
 For example, in the past, companies like Amazon and Samsung faced issues related
@@ -163,7 +161,7 @@ curl https://api.openai.com/v1/chat/completions \
 - `messages`: (required) An array of messages that describes the conversation. 
       The role can be either `system`, `user` or `assistant`.
 
-As an example, this is one of the massages used for ChatGPT:
+As an example, this is one of the messages used for ChatGPT:
 
 ```sh
 You are ChatGPT, a large language model trained by OpenAI. Answer as concisely
@@ -172,16 +170,20 @@ as possible. Knowledge cutoff: {knowledge_cutoff} Current date: {current_date}
 
 The system role is used to set the behaviour of the assistant.
 gpt3.5-turbo has a limitation on where **it does not always pay strong
-attention to the system messages**.
+attention to the system messages** ⚠️.
 
 There are a couple of strategies to work around this:
 
-1. Use a system message with examples as user and assistant messages:
+<details>
+
+<summary>1. Use a system message with examples as user and assistant messages</summary>
+
 
 The `user` and `assistant` roles will provide conversation examples to guide
 the model's behaviour:
 
 message (role `system`)
+
 ```sh
 You are an insightful assistant that crafts
 commit messages. The commit messages should accurately and succinctly explain
@@ -204,6 +206,7 @@ The style of the commit message should be conversational and casual using inform
 ```
 
 message (role `user`)
+
 This is used as an example for the model.
 
 ```git
@@ -222,12 +225,14 @@ index 0000000..ca34b6a
 ```
 
 message (role `assistant`)
+
 This is used as an example response for the model.
 ```sh
-"Unleashing a brand new README.md to demystify our OpenAI-powered commit message wizardry!\n\nHey folks,\nWe just slapped a shiny new README.md into the mix! 🎉\nThis bad boy's job is to school you all about our super cool, freshly baked tool that spits out commit message suggestions - all powered by the magic of OpenAI (no wizards were harmed in the process, promise! 🧙.\nIt's got everything - the ins, the outs, the what-have-yous about our tool. Oh, and it's also gonna give you the lowdown on the stuff we're sending over to OpenAI (don't worry, it's just filenames and changed lines, not your secret cookie recipes! 🍪).\nSo strap in, take a gander at the README, and let's get those commit messages singing!"
+Unleashing a brand new README.md to demystify our OpenAI-powered commit message wizardry!\n\nHey folks,\nWe just slapped a shiny new README.md into the mix! 🎉\nThis bad boy's job is to school you all about our super cool, freshly baked tool that spits out commit message suggestions - all powered by the magic of OpenAI (no wizards were harmed in the process, promise! 🧙.\nIt's got everything - the ins, the outs, the what-have-yous about our tool. Oh, and it's also gonna give you the lowdown on the stuff we're sending over to OpenAI (don't worry, it's just filenames and changed lines, not your secret cookie recipes! 🍪).\nSo strap in, take a gander at the README, and let's get those commit messages singing!
 ```
 
 message (role `user`)
+
 This is the final message that contains the git diff.
 
 ```git
@@ -261,7 +266,13 @@ index fc1aa3870..1b05f8a2f 100644
      await act(async () => {
 ```
 
-2. Use only use a `user` role message:
+</details>
+
+<details>
+
+<summary>2. Use only use a single `user` role message</summary>
+
+This will use less tokens.
 
 message (role `user`)
 ```git
@@ -304,6 +315,7 @@ index fc1aa3870..1b05f8a2f 100644
      await act(async () => {
 ```
 
+</details>
 
 - `temperature`: (optional) A value between 0 and 2 that decides how deterministic the
     response should be. 0 will be very deterministic (although not 100%
@@ -365,7 +377,7 @@ provides more clarity and context for the model, leading to more detailed and
 relevant outputs. With that said, the prompt will count toward the tokens used,
 so a trade-off has to be made where the prompt is clear-and-specific enough.
 
-The perfect prompt is rarely generated on the first try. Instead try an
+The perfect prompt is **rarely created on the first try**. Instead try an
 iterative process where the prompt is refined.
 
 My favorite strategy to create a good prompt is to utilize ChatGPT with a prompt
@@ -432,7 +444,8 @@ E.g.
 message (role `user`)
 ```sh
 Generate 3 made-up planets for a sci-fi book along with planet characteristics. 
-Provide them in JSON format with the following keys: in_habitable_zone (bool), atmospheric_composition (string), average_temperature (float).
+Provide them in JSON format with the following keys: in_habitable_zone (bool),
+atmospheric_composition (string), average_temperature (float).
 Only respond with the JSON.
 ```
 
@@ -481,7 +494,7 @@ Goals to achieve:
 3. (Optional) Set it up as a git hook so that it will run on each git commit!
 
 This is an example on how to do just that (where the CLI tool is called
-`commit-msg` and is in PATH):
+`commit-msg` and is in `PATH`):
 
 ```sh
 ───────┬────────────────────────────────────────────────────────────────────────────────────
@@ -599,13 +612,17 @@ to understand the changes without having to look at the code.
 
 ## References
 
-* [^1]: https://youtu.be/L_Guz73e6fw?t=4434
+[^1]: https://youtu.be/L_Guz73e6fw?t=4434
      Sam Altman: OpenAI CEO on GPT-4, ChatGPT, and the Future of AI | Lex Fridman Podcast #367 @ youtube
-* [^2]: https://openai.com/blog/openai-lp
+
+[^2]: https://openai.com/blog/openai-lp
     OpenAI LP blog announcement @ openai.com
-* [^3]: https://platform.openai.com/docs/models/overview
+
+[^3]: https://platform.openai.com/docs/models/overview
     List of OpenAI API models
-* [^4]: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+
+[^4]: https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
     What are embeddings
-* [^5]: https://platform.openai.com/docs/guides/chat/do-you-store-the-data-that-is-passed-into-the-api
+
+[^5]: https://platform.openai.com/docs/guides/chat/do-you-store-the-data-that-is-passed-into-the-api
     FAQ: Do you store data that is passed into the API?
