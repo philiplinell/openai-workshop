@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800);
+
+      body {
+        color: #04060c;
+        font-family: Sora;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Introduction
+
+---
+
+## What Will We Build?
+
+**DEMO TIME**
+
+- The file name is passed as a parameter.
+- The git diff (file-content) is then parsed.
+- The git diff is then passed into a prompt sent to the OpenAI API.
+- The response is returned from the CLI tool.
+
+---
+
+## What Is OpenAI?
+
+OpenAI is an artificial intelligence research lab.
+
+The mission is to ensure that artificial general intelligence (AGI) benefits all of humanity.
+
+The organization started and continues to be a **non-profit**, but has a subsidiary that is a **capped for-profit** company. The goal with this structure is to try to strike a balance between the slow pace of non-profit and the speed of a for-profit.
+
+---
+
+## Models
+
+The different models have different purposes, such as generating code, images, natural language, etc.
+
+| Model   | Purpose                                                    |
+| ------- | ---------------------------------------------------------- |
+| DALL E  | Image generation from natural language                      |
+| Whisper | Speech recognition model                                    |
+| Embeddings | Measures relatedness of text strings. Use cases are search, recommendations, anomaly detection etc. |
+
+For our project, we are utilizing **GPT-3**, a language model, due to its ability
+to understand and generate meaningful responses from text inputs.
+
+---
+
+## Note on Proprietary Data
+
+Be mindful of the data you send to OpenAI. Even though the data sent via the API is **not used** to improve the models, you should have permission from your client if you use any tools (such as the one we are building) professionally.
+
+---
+
+## Cost Considerations
+
+- Different models have different price points.
+- The pricing is pay as you go, and you pay per 1,000 *tokens*.
+- New accounts get $5 in free credit that can be used during your first 3 months.
+
+- Setup billing limits: [platform.openai.com/account/billing/limits](https://platform.openai.com/account/billing/limits)
+
+See more on [openai.com/pricing](https://openai.com/pricing).
+
+---
+
+## Libraries
+
+Libraries exist for many programming languages. See the list [openai.com/docs/libraries](https://platform.openai.com/docs/libraries).
+
+It is also possible to write your own library if you wish.
+
+---
+
+## Strategy for interacting with our CLI tool
+
+
+* Pass filename that contains git diff
+
+Probably easiest ⭐
+
+E.g.
+```sh
+$ commit-msg --filename=.git/COMMIT_EDITTMSG
+```
+
+* Read entire diff
+
+E.g.
+```sh
+$ commit-msg --changes=$(git diff)
+```
+
+* Get diff using a git library
+
+This would use a git library (or call git as a shell command) to get a git diff.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
