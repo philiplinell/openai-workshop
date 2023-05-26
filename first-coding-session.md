@@ -75,6 +75,39 @@ This would use a git library (or call git as a shell command) to get a git diff.
 
 ## 3. Implement strategy
 
+### Example node
+
+Using 2.1, passing in a filename and parsing the file.
+
+```javascript
+const fs = require('fs');
+
+// Getting the filename from the command line arguments
+const filename = process.argv.slice(2)[0];
+
+// Checking if a filename was provided
+if (!filename || filename.length === 0) {
+    console.log("Please pass a filename as a single argument.");
+    process.exit(1);
+}
+
+// Checking if the provided file exists
+if (!fs.existsSync(filename)) {
+    console.log(`File does not exist: ${filename}`);
+    process.exit(1);
+}
+
+try {
+  // Reading the file's content
+  const gitDiff = fs.readFileSync(filename, 'utf8');
+
+  console.log(gitDiff);
+} catch (err) {
+  // Handling any errors that might occur
+  console.error(err);
+}
+```
+
 ### Example Go
 
 Using 2.1, passing in a filename and parsing the file.
@@ -122,3 +155,4 @@ func readFile() (string, error) {
 	return sb.String(), nil
 }
 ```
+
