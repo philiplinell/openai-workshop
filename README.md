@@ -66,3 +66,5 @@ should have a finished CLI tool to create commit message suggestions!
 Proposed improvements, questions and further resources.
 
 👉 [Wrap Up](./wrap-up.md) 👈
+
+Examples are available in the [examples](./examples/) folder.
