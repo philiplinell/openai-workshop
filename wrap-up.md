@@ -2,6 +2,11 @@
 
 ## Suggested Improvements
 
+### Take your Commit messages into account
+
+Instead of basing the commit message from only the git diff, why not create
+prompt that accepts both an initial commit message from you and the git diff.
+
 ### Add Style and/or pizzazz
 
 **Descriptive and Neutral Style:**
@@ -75,17 +80,29 @@ Instead of triggering the tool by a Git hook (or whatever method you choose),
 why not integrate the CLI tool into your favorite editor? This way it can be
 called upon when you most need it.
 
+### Handle too long git diffs
+
+As both the prompt, git diff and response will count towards the max tokens you
+might want to shorten the git diff if it is too long.
+
 ## Anyone wants to demo their tool?
 
 ## Questions
 
 ## Further Resources
 
-- OpenAI billing limits: https://platform.openai.com/account/billing/limits
-    It is recommended to use this to set a hard limit on your API usage.
+- [ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
 
 - OpenAI playground https://platform.openai.com/playground/p/?mode=chat
 
 - OpenAI Cookbook: https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md
 
 ## Feedback link
+
+Go to www.menti.com.
+
+Enter code 41 18 90 9.
+
+Or scan QR Code
+
+![](./qr.png)

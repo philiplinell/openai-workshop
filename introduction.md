@@ -1,5 +1,10 @@
 # Introduction
 
+## Disclaimer
+
+I'm no expert. I'm basing the information here from personal experience and from
+what I've learnt online.
+
 ## What Will We Build?
 
 **SHOW DEMO**

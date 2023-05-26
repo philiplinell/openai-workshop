@@ -1,5 +1,7 @@
 # OpenAI Workshop
 
+This is accompanying information for a mini workshop at tretton37.
+
 ## The Goal of this Workshop
 
 The primary aim of this workshop is to spark creativity by demonstrating
