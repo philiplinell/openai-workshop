@@ -17,13 +17,13 @@ Goals to achieve:
 
     2.3 Get diff using a git library
 
-3. Get the diff into your tool
+3. Implement strategy - get the diff into your tool
 
 4. Send a request from your tool to the OpenAI API.
     Use a [library](https://platform.openai.com/docs/libraries) or build your
     own.
 
-## 2. Decide on strategy - details
+## 2. Decide on strategy
 
 You can do this however you want, but I would recommend one of:
 
@@ -47,21 +47,21 @@ $ commit-msg --changes=$(git diff)
 
 This would use a git library (or call git as a shell command) to get a git diff.
 
-## 3. Implement strategy - details
+## 3. Implement strategy
 
 ### Example Go
 
 Using 2.1, passing in a filename and parsing the file.
 
 ```go
-Ä
+
 var (
 	filename           string // this is populated from a CLI flag --file
 )
 
 func main() {
 
-    // ...
+	// ...
 
 	gitDiff, err := readFile()
 	if err != nil {
@@ -69,7 +69,7 @@ func main() {
 		log.Fatalf("could not read file %q: %s", filename, err)
 	}
 
-    // ...
+	// ...
 }
 
 // readFile will read the file contents, ignoring lines starting with #
