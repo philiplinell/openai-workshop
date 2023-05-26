@@ -99,9 +99,7 @@ might want to shorten the git diff if it is too long.
 
 ## Feedback link
 
-Go to www.menti.com.
-
-Enter code 41 18 90 9.
+https://sv.surveymonkey.com/r/PRYFVPQ
 
 Or scan QR Code
 
