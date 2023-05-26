@@ -32,6 +32,9 @@ natural language, etc. [^3].
 | Whisper | Speech recognition model |
 | Embeddings |  Measures relatedness of text strings. Use cases are search, recommendations, anomaly detection [^4] etc. |
 
+For our project, we are utilizing **GPT-3**, a language model, due to its ability
+to understand and generate meaningful responses from text inputs.
+
 ## Note on Proprietary Data
 
 Be mindful of the data you send into the API. Even though the data sent via the
@@ -51,20 +54,36 @@ carefully managing the data you share with AI APIs.
 
 * Setup billing limits: https://platform.openai.com/account/billing/limits
 
-See more [here](https://openai.com/pricing).
+See more on [openai.com/pricing](https://openai.com/pricing).
 
 ## Libraries
 
-Libraries exists for many programming languages. See list
-[here](https://platform.openai.com/docs/libraries).
+Libraries exist for many programming languages. See the list [openai.com/docs/libraries](https://platform.openai.com/docs/libraries).
 
 It is also possible to write your own library if you wish.
 
 
 ## Strategy for interacting with our CLI tool
 
-FIXME
+* Pass filename that contains git diff
 
+E.g.
+```sh
+$ commit-msg --filename=.git/COMMIT_EDITTMSG
+```
+
+Probably easiest ⭐
+
+* Read entire diff
+
+E.g.
+```sh
+$ commit-msg --changes=$(git diff)
+```
+
+* Get diff using a git library
+
+This would use a git library (or call git as a shell command) to get a git diff.
 
 ## References
 
