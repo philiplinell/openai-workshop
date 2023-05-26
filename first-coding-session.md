@@ -1,6 +1,10 @@
 # First Coding Session
 
-~ 15 minutes.
+Lets get the ball rolling during this first coding session. Get an API KEY,
+decide on how you want to interact with your CLI, store the git diff in memory
+and try to send any request to OpenAI API.
+
+This should take about ~ 15 minutes.
 
 Goals to achieve:
 
@@ -10,6 +14,8 @@ Goals to achieve:
    [here](https://platform.openai.com/account/billing/limits).
 
 2. Decide on a strategy for how to interact with the tool you are creating
+	We somehow need to get the git diff into our CLI tool. We can do this in
+	multiple ways, some of which are:
 
     2.1 Read filename
 
@@ -22,6 +28,26 @@ Goals to achieve:
 4. Send a request from your tool to the OpenAI API.
     Use a [library](https://platform.openai.com/docs/libraries) or build your
     own.
+
+## 1. Get the API KEY
+
+I would recommend you store your API key in a variable.
+If you use `zsh` you can store it in `~/.zshenv`:
+
+```sh
+──────────────────────────────────────────────────────────────────────────────────────────
+       │ File: /Users/philiplinell/.zshenv
+──────────────────────────────────────────────────────────────────────────────────────────
+   1   │ # -------------------------
+   2   │ # This file should not contain any slow instructions as this file is always sourced.
+   3   │ # .zshenv should not contain commands that produce output or assume the shell is attached to a tty.
+   4   │ # $PATH, $EDITOR, and $PAGER are often set in .zshenv.
+   5   │ # -------------------------
+   6   │
+   7   │
+   7   │ export OPENAI_API_KEY=sk-abc123
+──────────────────────────────────────────────────────────────────────────────────────────
+```
 
 ## 2. Decide on strategy
 
