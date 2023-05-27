@@ -54,6 +54,23 @@ curl https://api.openai.com/v1/chat/completions \
 - `messages`: (required) An array of messages that describes the conversation. 
       The role can be either `system`, `user` or `assistant`.
 
+The `user` and `assistant` roles can be used both when creating a chat bot where
+you want to include the previous messages (as a history) or for initiating new
+conversations.
+
+If you are using it for historical purposes you include past `user` and
+`assistant` messages. This will enable the model to consider the entire
+conversation history when generating a response. Currently there is no way to
+keep state across API requests as each API request has to include previous
+conversations if you want to continue a conversation.
+Note though that the entire message can be too long for the API call. In that
+case you need to shorten it somehow.
+
+Initiating new conversations: When starting a new conversation, you can use the
+"user" role to pose the initial question or statement, and the "assistant" role
+to provide the initial response.
+
+
 As an example, this is one of the messages used for ChatGPT:
 
 ```sh
