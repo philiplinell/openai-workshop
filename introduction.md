@@ -14,6 +14,17 @@ what I've learnt online.
 * The git diff is then passed into a prompt sent to the OpenAI API.
 * The response is returned from the CLI tool
 
+Commands used in demo:
+```sh
+# Show command
+
+# Angular demo
+cd angular
+git reset HEAD~
+git add .
+git commit
+```
+
 ## What Is OpenAI?
 
 OpenAI is a artificial intelligence research lab. 

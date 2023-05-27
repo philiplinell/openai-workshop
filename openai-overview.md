@@ -1,5 +1,8 @@
 # OpenAI API Overview
 
+We will be using the [Chat
+completion](https://platform.openai.com/docs/guides/chat) API.
+
 ## Authentication
 
 Authentication is done through bearer authentication (also called token

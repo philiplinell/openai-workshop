@@ -2,6 +2,14 @@
 
 ## Suggested Improvements
 
+### Provide a way to toggle on or off
+
+Perhaps enable using a flag, so the use will be:
+
+```sh
+SUGGEST_COMMIT=true git commit
+```
+
 ### Take your Commit messages into account
 
 Instead of basing the commit message from only the git diff, why not create
@@ -88,14 +96,6 @@ might want to shorten the git diff if it is too long.
 ## Anyone wants to demo their tool?
 
 ## Questions
-
-## Further Resources
-
-- [ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
-
-- OpenAI playground https://platform.openai.com/playground/p/?mode=chat
-
-- OpenAI Cookbook: https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md
 
 ## Feedback link
 

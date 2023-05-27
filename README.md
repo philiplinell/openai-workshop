@@ -69,4 +69,11 @@ Proposed improvements, questions and further resources.
 
 👉 [Wrap Up](./wrap-up.md) 👈
 
+## Further Resources
+
+- [ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
+- OpenAI playground https://platform.openai.com/playground/p/?mode=chat
+
+- OpenAI Cookbook: https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md
+
 Examples are available in the [examples](./examples/) folder.
