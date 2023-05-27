@@ -41,10 +41,15 @@ curl https://api.openai.com/v1/chat/completions \
 }
 ```
 
-- `models`: (required) specifies the models used. We will be using 3.5-turbo as it is the
+- `model`: (required) specifies the model used. We will be using 3.5-turbo as it is the
     most capable.
-    You can programatically get a list of models by doing a `GET` request to
+    You can programmatically get a list of models by doing a `GET` request to
     `https://api.openai.com/v1/models`.
+
+- `temperature`: (optional) A value between 0 and 2 that decides how deterministic the
+    response should be. 0 will be very deterministic (although not 100%
+    deterministic) and a value with 2 will return more diverse completions.
+    Default is 1.
 
 - `messages`: (required) An array of messages that describes the conversation. 
       The role can be either `system`, `user` or `assistant`.
@@ -204,12 +209,6 @@ index fc1aa3870..1b05f8a2f 100644
 ```
 
 </details>
-
-- `temperature`: (optional) A value between 0 and 2 that decides how deterministic the
-    response should be. 0 will be very deterministic (although not 100%
-    deterministic) and a value with 2 will return more diverse completions.
-    Default is 1.
-
 
 ## Tokens
 
