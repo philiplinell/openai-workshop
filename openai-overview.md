@@ -252,10 +252,6 @@ The response will contain the `total_tokens` used.
     Instead, if you wish to limit the response use prompts such as "use at most
     3 sentences" or "use at most 320 characters".
 
-## Tips on git commands
-
-See [here](./commits/README.md)
-
 ## Prompt Engineering
 
 The main principle is to use clear & specific instructions, but make sure to
@@ -309,7 +305,7 @@ Here are some techniques you can use while refining your prompt.
 #### Use delimiters to clearly indicate distinct parts.
 
 Delimiters can be triple backticks, triple quotes """, triple dashes, angled
-brackets, xml tags, etc.
+brackets, `xml` tags, etc.
 
 It is important to note that GPT-3.5 doesn't treat backticks as special or
 distinguishing in any way. They are treated as ordinary characters and don't
@@ -363,3 +359,21 @@ Response:
 
 Specify what the model should do in case that any preconditions are not met.
 
+```
+Summarize the provided receipe and re-write it as clear instructions in the
+following format:
+
+Step 1: ...
+Step 2: ...
+...
+Step N: ...
+
+If the text do not contain a recepie, then simple write "No recepie provided".
+
+${recepie}
+```
+
+
+## OpenAI Playground
+
+OpenAI Playground https://platform.openai.com/playground/p/?mode=chat

@@ -75,7 +75,7 @@ Proposed improvements, questions and further resources.
 
 - [ChatGPT Prompt Engineering for Developers](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
 
-- OpenAI playground https://platform.openai.com/playground/p/?mode=chat
+- OpenAI Playground https://platform.openai.com/playground/p/?mode=chat
 
 - OpenAI Cookbook: https://github.com/openai/openai-cookbook/blob/main/techniques_to_improve_reliability.md
 
