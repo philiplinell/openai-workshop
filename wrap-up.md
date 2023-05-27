@@ -99,8 +99,3 @@ might want to shorten the git diff if it is too long.
 
 ## Feedback link
 
-https://sv.surveymonkey.com/r/PRYFVPQ
-
-Or scan QR Code
-
-![](./qr.png)

@@ -83,12 +83,12 @@ It is also possible to write your own library if you wish.
 
 * Pass filename that contains git diff
 
+Probably easiest ⭐
+
 E.g.
 ```sh
 $ commit-msg --filename=.git/COMMIT_EDITTMSG
 ```
-
-Probably easiest ⭐
 
 * Read entire diff
 
